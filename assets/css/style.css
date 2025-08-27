@@ -9,6 +9,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+*,
+*::before,
+*::after { box-sizing: border-box; }  /* added: consistent sizing */
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -75,9 +79,8 @@ h6 {
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
   z-index: 9997;
-  transition: all 0.5s;
+  transition: all 0.5s ease-in-out;  /* cleaned: single transition */
   padding: 0 15px;
   background: #040b14;
   overflow-y: auto;
@@ -243,6 +246,7 @@ h6 {
   height: 100vh;
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
+  position: relative;
 }
 
 #hero:before {
@@ -430,7 +434,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -535,13 +539,12 @@ section {
 }
 
 .portfolio #portfolio-flters {
-  padding: 0;
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
   background: #fff;
   border-radius: 50px;
-  padding: 2px 15px;
+  padding: 2px 15px;  /* cleaned: single padding declaration */
 }
 
 .portfolio #portfolio-flters li {
@@ -1015,13 +1018,8 @@ section {
 }
 
 @keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /*--------------------------------------------------------------
@@ -1101,6 +1099,134 @@ section {
   #footer {
     position: static;
     width: auto;
-    padding-right: 20px 15px;
+    padding: 20px 15px;  /* FIXED: was padding-right: 20px 15px; */
   }
 }
+
+/* === Resume accordion + "show more" === */
+.resume details.resume-item {
+  border-left: 2px solid #1f5297;
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  position: relative;
+  background: transparent;
+}
+
+.resume details.resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #1f5297;
+}
+
+/* clickable header */
+.resume summary.resume-summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding-right: 6px;
+}
+.resume summary.resume-summary::-webkit-details-marker { display: none; }
+
+/* focus state (accessibility) */
+.resume summary.resume-summary:focus {
+  outline: 2px solid #149ddd;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* chevron */
+.resume summary .chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform .2s ease;
+}
+.resume details[open] summary .chevron { transform: rotate(180deg); }
+
+/* inner body */
+.resume .resume-body { margin-top: 10px; }
+
+/* collapsed list wrapper (items 3..n) */
+.resume .collapsed-list { display: none; }
+.resume.is-open .collapsed-list { display: block; }
+
+/* show more button */
+.resume .more-wrap { text-align: center; margin-top: 8px; }
+.resume .more-btn {
+  border: 1px solid #e5e7eb;
+  background:#f9fafb;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+.resume .more-btn:focus { outline: 2px solid #000; outline-offset: 2px; }
+
+
+/* ===== Highlight Carousel Controls (Prev/Next) ===== */
+#certificate .carousel-control-prev-icon,
+#certificate .carousel-control-next-icon {
+  background-color: #149ddd;   /* highlight color (blue) */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-size: 60% 60%;
+}
+
+#certificate .carousel-control-prev-icon:hover,
+#certificate .carousel-control-next-icon:hover {
+  background-color: #ff9800;   /* hover highlight (orange) */
+}
+
+
+#certificate .carousel-indicators [data-bs-target] {
+  background-color: #149ddd;   /* inactive dot */
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+#certificate .carousel-indicators .active {
+  background-color: #ff9800;   /* active dot (highlight) */
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Testimonials carousel styling (Bootstrap) */
+#testimonials .carousel { position: relative; }
+#testimonials .carousel-item { padding: 20px 0 10px; }
+
+/* Dots */
+#testimonials .carousel-indicators [data-bs-target]{
+  width: 10px; height: 10px; border-radius: 50%;
+  background-color: #cbd5e1; /* slate-300 */
+}
+#testimonials .carousel-indicators .active{
+  background-color: #149ddd; /* match site accent */
+}
+
+/* Arrows */
+#testimonials .carousel-control-prev,
+#testimonials .carousel-control-next{ width: 8%; }
+#testimonials .carousel-control-prev-icon,
+#testimonials .carousel-control-next-icon{
+  filter: invert(1) drop-shadow(0 0 2px rgba(0,0,0,.35));
+}
+
+/* Keep the nice card look from template */
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  text-align: center;
+  min-height: 320px;
+}
+
