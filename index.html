@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>iPortfolio Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet" />
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Nov 17 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Inline add-ons for the resume accordion + show more -->
+  <style>
+    /* === Resume accordion + "show more" === */
+    .resume details.resume-item {
+      border-left: 2px solid #1f5297;
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
+      position: relative;
+      background: transparent;
+    }
+    .resume details.resume-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: #fff;
+      border: 2px solid #1f5297;
+    }
+    .resume summary.resume-summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 8px;
+      padding-right: 6px;
+    }
+    .resume summary.resume-summary::-webkit-details-marker { display: none; }
+    .resume summary .chevron {
+      width: 18px;
+      height: 18px;
+      transition: transform .2s ease;
+    }
+    .resume details[open] summary .chevron { transform: rotate(180deg); }
+    .resume .resume-body { margin-top: 10px; }
+    .resume .collapsed-list { display: none; }
+    .resume.is-open .collapsed-list { display: block; }
+    .resume .more-wrap { text-align: center; margin-top: 8px; }
+    .resume .more-btn {
+      border: 1px solid #e5e7eb; background:#f9fafb; border-radius: 999px;
+      padding: 8px 14px; cursor: pointer; font: inherit;
+    }
+    .resume .more-btn:focus { outline: 2px solid #000; outline-offset: 2px; }
+  </style>
 </head>
 
 <body>
-
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
-
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle" />
         <h1 class="text-light"><a href="index.html">Aniket Fasate</a></h1>
         <div class="social-links mt-3 text-center">
-          <!-- <a href="#" class="medium"><i class="bx bxl-twitter"></i></a> -->
-          <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
           <a href="https://medium.com/@fasateaniket5" class="instagram"><i class="bi bi-medium"></i></a>
           <a href="https://github.com/AniketFasate27" class="github"><i class="bi bi-github"></i></a>
           <a href="https://www.linkedin.com/in/aniketfasate27/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -62,20 +94,14 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <!-- <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li> -->
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
-          <li><a href="#project" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Project</span></a>
-          </li>
-          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-envelope"></i>
-              <span>Testimonials</span></a></li>
-          <li><a href="#certificate" class="nav-link scrollto"><i class="bx bx-envelope"></i>
-              <span>Certificate</span></a></li>
-          <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Portfolio</span></a></li>
+          <li><a href="#project" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Project</span></a></li>
+          <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Testimonials</span></a></li>
+          <li><a href="#certificate" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Certificate</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
     </div>
   </header><!-- End Header -->
 
@@ -88,21 +114,20 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
         <div class="section-title">
           <h2>About</h2>
-          <p style="text-indent: 40px" , style="text-align: justify;">I am a Master of Science student in Internet of
-            Things at Northeastern University, and the founder of Avinya Intelligence, a company that develops
+          <p style="text-indent: 40px; text-align: justify;">
+            I am a Master of Science student in Internet of Things at Northeastern University, and the founder of Avinya Intelligence, a company that develops
             innovative IoT and AI/ML solutions. I have a keen interest in research and development, and have three years
             of experience as a researcher at the Indian Institute of Technology. I completed my Bachelor's degree in
             Electronics and Telecommunication Engineering. My passion for IoT and AI/ML stems from my belief that these
             technologies have the potential to revolutionize the way we live and work. I am particularly interested in
             developing solutions that can address real-world problems in areas such as healthcare, transportation, and
-            energy.</p>
+            energy.
+          </p>
         </div>
 
         <div class="row">
@@ -112,38 +137,25 @@
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3> AI/Ml &amp; IoT Researcher and Developer.</h3>
             <p class="fst-italic">
-              “If you think that the internet has changed your life, think again. The Internet of Things is about to
-              change it all over again!”.
+              “If you think that the internet has changed your life, think again. The Internet of Things is about to change it all over again!”.
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>27 Feb 1997</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span> <a
-                        href="<https://www.linkedin.com/in/aniketfasate27/">linkedin</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span> <a
-                        href="<https://medium.com/@fasateaniket5">Medium</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span> <a
-                        href="<https://github.com/AniketFasate27">Github</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Resume:</strong> <span> <a
-                        href="<https://raw.githubusercontent.com/AniketFasate27/aniketfasate/main/assets"
-                        download="Aniket_Fasate_Resume.pdf">Aniket_Fasate_Resume.pdf</a></span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+185 733 28478</span></li> -->
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Boston, MA, USA</span></li>  -->
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://www.linkedin.com/in/aniketfasate27/">LinkedIn</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://medium.com/@fasateaniket5">Medium</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://github.com/AniketFasate27">Github</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Resume:</strong> <span><a href="https://raw.githubusercontent.com/AniketFasate27/aniketfasate/main/assets" download="Aniket_Fasate_Resume.pdf">Aniket_Fasate_Resume.pdf</a></span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>University:</strong> <span>Northeastern University,
-                      Boston</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master of Science in Internet
-                      Of Things</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fasate.a@northeastern.edu</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fasateaniket5@gmail.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+185 733 28478</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li> -->
+                  <li><i class="bi bi-chevron-right"></i> <strong>University:</strong> <span>Northeastern University, Boston</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master of Science in Internet Of Things</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fasate.a@northeastern.edu</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fasateaniket5@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 8573 3284 78</span></li>
                 </ul>
               </div>
             </div>
@@ -154,95 +166,51 @@
       </div>
     </section><!-- End About Section -->
 
-    
-
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container">
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p style="text-align: justify;">An IoT engineer requires proficiency in programming (Python, C++), knowledge
-            of networking protocols (MQTT, CoAP), experience with IoT platforms (AWS IoT, Azure IoT Hub), understanding
-            of data analytics and machine learning, along with skills in cybersecurity, hardware design, and cloud
-            computing. Effective communication and project management skills are also essential.</p>
+          <p style="text-align: justify;">
+            An IoT engineer requires proficiency in programming (Python, C++), knowledge of networking protocols (MQTT, CoAP), experience with IoT platforms (AWS IoT, Azure IoT Hub), understanding of data analytics and machine learning, along with skills in cybersecurity, hardware design, and cloud computing. Effective communication and project management skills are also essential.
+          </p>
         </div>
 
         <div class="row skills-content">
-
           <div class="col-lg-6" data-aos="fade-up">
-
             <div class="progress">
               <span class="skill">Internet Of Things <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
             <div class="progress">
               <span class="skill">Embedded Systems <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
             <div class="progress">
               <span class="skill">Networking and Communications Protocols<i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
             <div class="progress">
               <span class="skill">IoT Platforms and Cloud Services<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
-            <!-- <div class="progress">
-              <span class="skill">Web-Development <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div> -->
-
-
-
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
             <div class="progress">
               <span class="skill">Artificial Intelligence &amp; Machine Learning<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
             <div class="progress">
               <span class="skill">Web-Development <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
             <div class="progress">
               <span class="skill">Leadership &amp; Project Management<i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div></div>
             </div>
-
           </div>
-
         </div>
 
       </div>
@@ -251,163 +219,175 @@
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <div class="container">
-
         <div class="section-title">
           <h2>Resume</h2>
-          <!-- <p>"Embracing challenges with resilience, our team consistently strives for excellence. We believe in the power of innovation and creativity to overcome obstacles. Our commitment to quality and attention to detail are evident in every project we undertake. Collaborative in spirit, we value each individual's contribution and work together to achieve collective success. In our pursuit of excellence, we remain dedicated to delivering outstanding results and exceeding expectations."</p> -->
         </div>
 
         <div class="row">
+          <!-- Education (Left) -->
           <div class="col-lg-6" data-aos="fade-up">
-            <!-- <h3 class="resume-title">Sumary</h3> -->
-            <div class="resume-item pb-0">
-              <!-- <h4>Aniket Fasate</h4>
-              <p><em><p style="text-align: justify;"> I am a Master of Science student in Internet of Things at Northeastern University, and the founder of Avinya Intelligence, a company that develops innovative IoT and AI/ML solutions. I have a keen interest in research and development, and have three years of experience as a researcher at the Indian Institute of Technology. I completed my Bachelor's degree in Electronics and Telecommunication Engineering.</p></em></p>
-              <ul>
-                <li>Boston, MA, USA</li>
-                <li>(857) 332-8478</li>
-                <li>fasate.a@northeastern.edu</li> -->
-              <!-- </ul> -->
-            </div>
-
-            <div class="resume-item pb-0"></div>
             <h3 class="resume-title">Education</h3>
-            <!-- <div class="resume-item pb-0"></div> -->
+
             <div class="resume-item">
               <h4>Master of Science In Internet Of Things</h4>
-              <h5>Aug 2023 - April 2025</h5>
+              <h5>Aug 2023 - Dec 2025</h5>
               <p><em><b>Northeastern University, Boston</b></em></p>
-              <p style="text-align: justify;"> The Master of Science in Internet of Things from Northeastern University
-                is a comprehensive program designed for professionals aspiring to specialize in the rapidly evolving IoT
-                sector. This advanced curriculum integrates engineering principles, computer science, and data analytics
-                to impart robust skills in IoT system design, implementation, and analysis. The program emphasizes
-                practical, hands-on experience with state-of-the-art technologies, preparing graduates to innovate and
-                lead in the dynamic field of IoT.</p>
+              <p style="text-align: justify;">
+                The Master of Science in Internet of Things from Northeastern University is a comprehensive program designed for professionals aspiring to specialize in the rapidly evolving IoT sector. This advanced curriculum integrates engineering principles, computer science, and data analytics to impart robust skills in IoT system design, implementation, and analysis. The program emphasizes practical, hands-on experience with state-of-the-art technologies, preparing graduates to innovate and lead in the dynamic field of IoT.
+              </p>
             </div>
+
             <div class="resume-item">
               <h4>Bachelor In Electronics and Telecommunication Engineering</h4>
               <h5>Aug 2016 - Aug 2020</h5>
-              <p><em><b>Shri Sant Gajanan Maharaj college Of Engineering, Shegaon, India</b></em></p>
-              <p style="text-align: justify;"> Earned a Bachelor's in Electronics and Telecommunication Engineering from
-                Shri Sant Gajanan Maharaj College of Engineering, this program melds rigorous theoretical foundations
-                with practical insights in electronics, digital communication, signal processing, and network design,
-                equipping graduates with the expertise to excel in the dynamic tech industry.</p>
+              <p><em><b>Shri Sant Gajanan Maharaj College Of Engineering, Shegaon, India</b></em></p>
+              <p style="text-align: justify;">
+                Earned a Bachelor's in Electronics and Telecommunication Engineering from Shri Sant Gajanan Maharaj College of Engineering, this program melds rigorous theoretical foundations with practical insights in electronics, digital communication, signal processing, and network design, equipping graduates with the expertise to excel in the dynamic tech industry.
+              </p>
             </div>
+
             <div class="resume-item">
               <h4>Higher Secondary School Certificate</h4>
               <h5>Aug 2014 - Jun 2016</h5>
               <p><em><b>Banarasidas Ruiya Junior College, Katol, India</b></em></p>
-              <p style="text-align: justify;">Attained the Higher Secondary School Certificate from Banarasidas Ruiya
-                Junior College, Katol, India, demonstrating a strong academic foundation in core subjects. This
-                certificate represents a successful completion of pre-university education, laying a solid groundwork
-                for further studies and professional pursuits in diverse fields. The curriculum focused on in-depth
-                theoretical knowledge, critical thinking, and analytical skills.</p>
+              <p style="text-align: justify;">
+                Attained the Higher Secondary School Certificate from Banarasidas Ruiya Junior College, Katol, India, demonstrating a strong academic foundation in core subjects. This certificate represents a successful completion of pre-university education, laying a solid groundwork for further studies and professional pursuits in diverse fields. The curriculum focused on in-depth theoretical knowledge, critical thinking, and analytical skills.
+              </p>
             </div>
           </div>
+
+          <!-- Professional Experience (Right) -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Project Researcher</h4>
-              <h5>Feb 2021 - Aug 2023</h5>
-              <p><em><b>Indian Instituate Of Technology (IIT-B), Bombay, India</b></em></p>
-              <ul>
-                <li><b>Site Survey Kit:</b>
-                  <p style="text-align: justify;">Engineered in MPU6050 and MPU9250 versions, this kit excels in on-site
-                    motion data collection. Achieving high-frequency data acquisition (up to 4kHz accelerometer, 8kHz
-                    gyroscope), the handheld device offers real-time insights with graph plotting. Its hosting server
-                    capabilities and Over-The-Air updates enhance convenience, ideal for construction and research,
-                    providing a portable solution for motion analysis, structural health monitoring, and dynamic
-                    behavior research.</p>
-                </li>
-                <li><b>Data Logger:</b>
-                  <p style="text-align: justify;">Presenting two versions tailored for diverse monitoring needs. Version
-                    1 integrates DHT22 and LDR sensors, optimizing climate monitoring with real-time user connectivity.
-                    Version 2 employs K-type thermocouples for precise Fahrenheit readings, catering to high-temperature
-                    environments. Both versions prioritize advanced data analysis, featuring hosting servers for
-                    seamless data management.</p>
-                </li>
-                <li><b>Dandi Project:</b>
-                  <p style="text-align: justify;">Implementing ESP series microcontrollers, the Dandi Project optimizes
-                    structural health monitoring on a 40-meter platform. Utilizing predictive analytics, the device
-                    assesses structural integrity. Featuring a userfriendly GUI, OTA updates, and advanced telemetry,
-                    this project seamlessly amalgamates IoT capabilities, data analytics, and predictive maintenance for
-                    enhanced structural robustness. </p>
-                </li>
-                <li>
-                  <p style="text-align: justify;">Utilizing ESP32-CAM and YOLOv3, this project employs OpenCV and
-                    ESPAsyncWebServer for efficient image processing and web hosting. Through innovative tunneling,
-                    users experience dynamic object identification on screens, harmonizing cutting-edge algorithms with
-                    ESP32-CAM capabilities for advanced real-time environmental monitoring</p>
-                </li>
-                <li>
-                  <p style="text-align: justify;">AI/ML Projects : Engaged in diverse projects, including advanced tasks
-                    like object detection and image classification. Additionally, simpler yet impactful projects
-                    involve sentiment analysis, spam email detection, and predictive text generation. These applications
-                    showcase proficiency in machine learning algorithms, neural networks, and natural language
-                    processing for comprehensive data analysis.</p>
-                </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>IoT &amp; AI/ML trainee</h4>
-              <h5>Jun 2018 - july 2018</h5>
-              <p><em><b>Defence Research and Development Organisation (DRDO), India</b></em></p>
-              <ul>
-                <li>
-                  <p style="text-align: justify;"> Sentimental Analysis: Engineered an intricate sentiment analysis
-                    system employing TensorFlow for neural network architecture, Scikit-learn for machine learning
-                    algorithms, and NLTK for natural language processing. Implemented a Convolutional Neural Network
-                    (CNN) model with tokenization, embedding layers, and the Adam optimizer for precise text analysis.
-                    Rigorous dataset handling, preprocessing, and backpropagation were executed. The Graphical User
-                    Interface (GUI) elevated the user experience, integrating real-time feedback. This project showcases
-                    comprehensive expertise, offering a robust sentiment identification tool with diverse AI/ML
-                    libraries.</p>
-                </li>
-                <!-- <li>Managed up to 5 projects or tasks at a given time while under pressure</li> -->
-                <!-- <li>Recommended and consulted with clients on the most appropriate graphic design</li> -->
-                <!-- <li>Created 4+ design presentations and proposals a month for clients and account managers</li> -->
-              </ul>
-            </div>
 
-            <div class="resume-item">
-              <h4>IoT &amp; AI/ML trainee</h4>
-              <h5>Jun 2017 - july 2017</h5>
-              <p><em><b>Indian Instituate of Technology, Kanpur, India</b></em></p>
-              <ul>
-                <li>
-                  <p style="text-align: justify;"> Autonomous Vehicle Prototype Development: Pioneering an autonomous
-                    vehicle, we initiated the project by assembling the vehicle from scratch. IoT sensors, ultrasonic
-                    sensors, and ESP32 controllers facilitated data collection. Subsequently, the data underwent
-                    meticulous training in MATLAB using backpropagation. The Raspberry Pi, employed for self-training
-                    testing, exemplifies robustness in real-world scenarios. This project integrates cuttingedge
-                    technologies, showcasing proficiency in sensor fusion, deep learning, and embedded systems,
-                    culminating in a comprehensive autonomous vehicle prototype.</p>
-                </li>
-                <!-- <li>Managed up to 5 projects or tasks at a given time while under pressure</li> -->
-                <!-- <li>Recommended and consulted with clients on the most appropriate graphic design</li> -->
-                <!-- <li>Created 4+ design presentations and proposals a month for clients and account managers</li> -->
-              </ul>
+            <div id="pro-exp" class="resume-accordion">
+              <!-- Item 1 (OPEN) -->
+              <details class="resume-item" open>
+                <summary class="resume-summary">
+                  <div>
+                    <h4>Co-op Software Engineer in Test (Embedded Firmware Development)</h4>
+                    <h5>Jan 2025 - Aug 2025</h5>
+                    <p><em><b>Philips healthcare</b></em></p>
+                  </div>
+                  <svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </summary>
+                <div class="resume-body">
+                  <ul>
+                    <li><p style="text-align: justify;">Refined firmware development and testing processes for STM32-based medical embedded devices, improving automation, system reliability, and compliance with medical industry standards.</p></li>
+                    <li><p style="text-align: justify;">Integrated networking protocols, Over-the-Air (OTA) updates, and secure communication protocols to enhance the security and efficiency of firmware and medical device data transmission.</p></li>
+                    <li><p style="text-align: justify;">Partnered with software architects and firmware developers to streamline operations, maximize resource efficiency, and meet research and development targets in a medical device setting.</p></li>
+                    <li><p style="text-align: justify;">Developed and implemented firmware strategies for advanced battery management in medical devices, significantly enhancing performance, battery life, user experience, and device reliability.</p></li>
+                  </ul>
+                </div>
+              </details>
+
+              <!-- Item 2 (OPEN) -->
+              <details class="resume-item" open>
+                <summary class="resume-summary">
+                  <div>
+                    <h4>Research and Development Engineer</h4>
+                    <h5>Feb 2021 - Aug 2023</h5>
+                    <p><em><b>Indian Instituate Of Technology (IIT-B), Bombay, India</b></em></p>
+                  </div>
+                  <svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </summary>
+                <div class="resume-body">
+                  <ul>
+                    <li><b>Site Survey Kit:</b>
+                      <p style="text-align: justify;">Engineered in MPU6050 and MPU9250 versions, this kit excels in on-site motion data collection. Achieving high-frequency data acquisition (up to 4kHz accelerometer, 8kHz gyroscope), the handheld device offers real-time insights with graph plotting. Its hosting server capabilities and Over-The-Air updates enhance convenience, ideal for construction and research, providing a portable solution for motion analysis, structural health monitoring, and dynamic behavior research.</p>
+                    </li>
+                    <li><b>Data Logger:</b>
+                      <p style="text-align: justify;">Presenting two versions tailored for diverse monitoring needs. Version 1 integrates DHT22 and LDR sensors, optimizing climate monitoring with real-time user connectivity. Version 2 employs K-type thermocouples for precise Fahrenheit readings, catering to high-temperature environments. Both versions prioritize advanced data analysis, featuring hosting servers for seamless data management.</p>
+                    </li>
+                    <li><b>Dandi Project:</b>
+                      <p style="text-align: justify;">Implementing ESP series microcontrollers, the Dandi Project optimizes structural health monitoring on a 40-meter platform. Utilizing predictive analytics, the device assesses structural integrity. Featuring a user-friendly GUI, OTA updates, and advanced telemetry, this project seamlessly amalgamates IoT capabilities, data analytics, and predictive maintenance for enhanced structural robustness.</p>
+                    </li>
+                    <li>
+                      <p style="text-align: justify;">Utilizing ESP32-CAM and YOLOv3, this project employs OpenCV and ESPAsyncWebServer for efficient image processing and web hosting. Through innovative tunneling, users experience dynamic object identification on screens, harmonizing cutting-edge algorithms with ESP32-CAM capabilities for advanced real-time environmental monitoring.</p>
+                    </li>
+                    <li>
+                      <p style="text-align: justify;">AI/ML Projects: object detection, image classification, sentiment analysis, spam detection, predictive text—demonstrating breadth across ML algorithms, neural networks, and NLP.</p>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+
+              <!-- Collapsed list: items 3..n (HIDDEN until "Show more") -->
+              <div class="collapsed-list" aria-hidden="true">
+                <!-- Item 3 (CLOSED) -->
+                <details class="resume-item">
+                  <summary class="resume-summary">
+                    <div>
+                      <h4>IoT &amp; AI/ML trainee</h4>
+                      <h5>Jun 2018 - July 2018</h5>
+                      <p><em><b>Defence Research and Development Organisation (DRDO), India</b></em></p>
+                    </div>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </summary>
+                  <div class="resume-body">
+                    <ul>
+                      <li><p style="text-align: justify;">Sentimental Analysis: Engineered an intricate sentiment analysis
+                        system employing TensorFlow for neural network architecture, Scikit-learn for machine learning
+                        algorithms, and NLTK for natural language processing. Implemented a Convolutional Neural Network
+                        (CNN) model with tokenization, embedding layers, and the Adam optimizer for precise text analysis.<br>
+                        Rigorous dataset handling, preprocessing, and backpropagation were executed. The Graphical User
+                        Interface (GUI) elevated the user experience, integrating real-time feedback. This project showcases
+                        comprehensive expertise, offering a robust sentiment identification tool with diverse AI/ML
+                        libraries.</p></li>
+                    </ul>
+                  </div>
+                </details>
+
+                <!-- Item 4 (CLOSED) -->
+                <details class="resume-item">
+                  <summary class="resume-summary">
+                    <div>
+                      <h4>IoT &amp; AI/ML trainee</h4>
+                      <h5>Jun 2017 - July 2017</h5>
+                      <p><em><b>Indian Institute of Technology, Kanpur, India</b></em></p>
+                    </div>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </summary>
+                  <div class="resume-body">
+                    <ul>
+                      <li><p style="text-align: justify;"> Autonomous Vehicle Prototype Development: Pioneering an autonomous
+                        vehicle, we initiated the project by assembling the vehicle from scratch. IoT sensors, ultrasonic
+                        sensors, and ESP32 controllers facilitated data collection. Subsequently, the data underwent
+                        meticulous training in MATLAB using backpropagation.<br> The Raspberry Pi, employed for self-training
+                        testing, exemplifies robustness in real-world scenarios. This project integrates cuttingedge
+                        technologies, showcasing proficiency in sensor fusion, deep learning, and embedded systems,
+                        culminating in a comprehensive autonomous vehicle prototype.</p></li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <!-- Show more / less -->
+              <div class="more-wrap">
+                <button class="more-btn" type="button" id="more-btn" aria-expanded="false" aria-controls="pro-exp">Show more</button>
+              </div>
             </div>
           </div>
-        </div>
-
-      </div>
+        </div> <!-- end .row -->
+      </div>   <!-- end .container -->
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
-
         <div class="section-title">
           <h2>Research Blogs</h2>
-          <p style="text-align: justify;"> Welcome to the insightful world of Aniket, a distinguished voice in the
-            realms of the Internet of Things (IoT), Artificial Intelligence (AI), Machine Learning (ML), and the latest
-            technological advancements. With a keen eye for the future, Aniket eloquently demystifies complex
-            technologies, making them accessible to a diverse audience. Their blog is a treasure trove of in-depth
-            analyses, trend forecasts, and thought-provoking discussions about how these technologies are
-            revolutionizing industries and daily life. Whether you're a tech enthusiast or a professional seeking to
-            stay ahead of the curve, Aniket's writings are an indispensable resource for understanding the technological
-            landscape of tomorrow.</p>
+          <p style="text-align: justify;">
+            Welcome to the insightful world of Aniket, a distinguished voice in the realms of the Internet of Things (IoT), Artificial Intelligence (AI), Machine Learning (ML), and the latest technological advancements. With a keen eye for the future, Aniket eloquently demystifies complex technologies, making them accessible to a diverse audience. Their blog is a treasure trove of in-depth analyses, trend forecasts, and thought-provoking discussions about how these technologies are revolutionizing industries and daily life.
+          </p>
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -422,21 +402,16 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
+          <!-- ... your portfolio items (unchanged) ... -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                  title="Seamless ESP32 Upgrades: A Guide to OTA Firmware and Sketch Updates"><i
-                    class="bx bx-plus"></i></a>
-                <a href="https://medium.com/@fasateaniket5/ota-of-firmware-and-sketch-file-update-e4826efce24"
-                  title="More Details"><i class="bx bx-link"></i></a>
+                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Seamless ESP32 Upgrades: A Guide to OTA Firmware and Sketch Updates"><i class="bx bx-plus"></i></a>
+                <a href="https://medium.com/@fasateaniket5/ota-of-firmware-and-sketch-file-update-e4826efce24" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
@@ -546,43 +521,36 @@
               </div>
             </div>
           </div>
-
+          <!-- (keep the rest of your portfolio cards as you had them) -->
         </div>
-
       </div>
     </section><!-- End Portfolio Section -->
-
-
-
 
     <!-- ======= Project Section ======= -->
     <section id="project" class="resume">
       <div class="container">
-
         <div class="section-title">
           <h2>Professional Projects</h2>
-          <!-- <p>"We are projects"</p> -->
         </div>
 
         <div class="row">
           <div class="resume-item">
-            <h4>Data Logger with Zigbee ( Temp, Humidity, and Lux)</h4>
-            <h5>2023 - 2025</h5>
-            <!-- <p><em>Northeastern University, Boston</em></p> -->
-            <p style="text-align: justify;">The Data Logger with Zigbee, equipped to monitor temperature, humidity, and
+            <h4>Enhanced Data Logging System with Integrated ZigBee Wireless Communication  Research Project(<a href="https://youtu.be/WCOXWQApK4U" target="_blank">Website Link</a>)</h4>
+            <h5>July 2020 – January 2021</h5>
+            <p style="text-align: justify;"> The Data Logger with Zigbee, equipped to monitor temperature, humidity, and
               lux (light intensity), represents a cutting-edge tool in environmental data collection. Utilizing Zigbee
               technology, a low-power, wireless mesh network standard, this data logger ensures efficient and reliable
               transmission of environmental data. The device's capability to track temperature and humidity makes it
               ideal for applications in climate-sensitive environments like greenhouses or storage facilities.
               Additionally, the lux sensor provides valuable insights into light exposure, crucial for settings like art
               galleries or plant growth studies. The combination of these sensors, coupled with the robust Zigbee
-              protocol, makes this data logger a versatile and accurate tool for a wide range of data monitoring needs.
-            </p>
+              protocol, makes this data logger a versatile and accurate tool for a wide range of data monitoring needs.</p>
           </div>
+
           <div class="resume-item">
-            <h4>Single Phase to Three Phase Converter (Smart India Hackathon, 2019 and bachelor’s project)</h4>
-            <h5>Jan-2016 - Dec-2020</h5>
-            <p><em>Freelance</em></p>
+            <h4>Single Phase to Three Phase Converter, Smart India Hackathon, 2019 and bachelor’s project(<a href="https://youtu.be/BKdJRJUnPNY" target="_blank">Website Link</a>)</h4>
+            <h5>July 2019 – March 2020</h5>
+            <!-- <p><em>Smart India</em></p> -->
             <p style="text-align: justify;">The Single Phase to Three Phase Converter is an innovative device designed
               to bridge the gap between single-phase and three-phase power supply systems. This converter is especially
               beneficial in areas where three-phase power is not available or is cost-prohibitive to install. It
@@ -591,10 +559,11 @@
               commercial applications, this converter facilitates the use of three-phase motors, pumps, and other
               machinery, offering a cost-effective solution without the need for extensive electrical upgrades. Its
               robust design ensures reliability and longevity, making it a vital tool for various applications requiring
-              three-phase power from a single-phase source.</p>
+              three-phase power from a single-phase source</p>
           </div>
+
           <div class="resume-item">
-            <h4>Real Time Face Detection (Person wearing Mask Or not)</h4>
+            <h4>Real-Time Mask Detection System Using Computer Vision</h4>
             <h5>Jan-2022 - April-2022</h5>
             <p><em>Freelance</em></p>
             <p style="text-align: justify;">The Real-Time Face Detection system is a sophisticated technological
@@ -606,8 +575,9 @@
               real-time processing capabilities provide immediate feedback, making it an essential tool for maintaining
               public health standards in a variety of environments.</p>
           </div>
+
           <div class="resume-item">
-            <h4>Sorting Of Fruits</h4>
+            <h4>Intelligent Fruit Sorting System Using Machine Learning</h4>
             <h5>Jan-2022 - April-2022</h5>
             <p><em>Research Project Sponsored by SGRC</em></p>
             <p style="text-align: justify;">The Sorting of Fruits system is an advanced technological solution designed
@@ -620,11 +590,12 @@
               efficiency but also contributes to reducing food waste, a critical aspect in the journey towards
               sustainable food production.</p>
           </div>
+
           <div class="resume-item">
-            <h4>Agriculture Quadcopter</h4>
-            <h5>Jan-2022 - April-2022</h5>
-            <p><em>(Sonserd by V-chip PVT, Pune</em></p>
-            <p style="text-align: justify;">The Real-Time Face Detection system is a sophisticated technological
+            <h4>Precision Agriculture Quadcopter for Enhanced Farm Monitoring and Management</h4>
+            <h5>August 2018 – December 2019 </h5>
+            <p><em>(Sponsored by V-chip PVT, Pune)</em></p>
+            <p style="text-align: justify;"> The Real-Time Face Detection system is a sophisticated technological
               solution designed to identify faces and determine whether individuals are wearing masks. This system is
               particularly relevant in the context of health and safety protocols, where mask-wearing has become
               crucial. Utilizing advanced algorithms and machine learning techniques, it can accurately detect faces in
@@ -633,8 +604,9 @@
               real-time processing capabilities provide immediate feedback, making it an essential tool for maintaining
               public health standards in a variety of environments.</p>
           </div>
+
           <div class="resume-item">
-            <h4>Smart Tourism using Bluetooth Beacons</h4>
+            <h4>IoT-Powered Smart Tourism with Beacon Technology</h4>
             <h5>Jan-2022 - April-2022</h5>
             <p><em>Hackthon 2021</em></p>
             <p style="text-align: justify;">Smart Tourism using Bluetooth Beacons is an innovative approach that
@@ -649,239 +621,203 @@
               sightseeing more informative, convenient, and enjoyable.</p>
           </div>
         </div>
-
-
       </div>
+    </section><!-- End Project Section -->
+
+    <!-- ======= Certificate (Carousel) ======= -->
+    <section id="certificate">
+      <div class="container">
+        <div class="section-title">
+          <h2>Certificate</h2>
+        </div>
       </div>
 
-      </div>
-    </section><!-- End Resume Section -->
+      <div class="container" style="text-align: center;" data-bs-interval="200">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin: 0 auto;">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
 
-        <!-- ======= Carousel Code Starts Here ======= -->
-        
-        <section id="Certificate">
-          <div class="container">
-            <div class="section-title">
-              <h2>Certificate</h2>
-              <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/img/Certificate/3.jpg" alt="First Certificate" width="800" height="550">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/Certificate/2.jpg" alt="Second Certificate" width="800" height="550">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/Certificate/1.jpg" alt="Third Certificate" width="800" height="550">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/Certificate/5.jpg" alt="Fourth Certificate" width="800" height="550">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/img/Certificate/6.jpg" alt="Fifth Certificate" width="800" height="550">
             </div>
           </div>
-        
-          <div class="container" style="text-align: center;" data-bs-interval="200">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin: 0 auto;">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                  aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                  aria-label="Slide 5"></button>
-              </div>
-        
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="assets/img/Certificate/3.jpg" alt="First Certificate" width="800" height="550">
-                  <div class="carousel-caption d-none d-md-block" style="text-align: center;">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/Certificate/2.jpg" alt="Second Certificate" width="800" height="550">
-                  <div class="carousel-caption d-none d-md-block" style="text-align: center;">
-        
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/Certificate/1.jpg" alt="Third Certificate" width="800" height="550">
-                  <div class="carousel-caption d-none d-md-block" style="text-align: center;">
-        
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/Certificate/5.jpg" alt="Third Certificate" width="800" height="550">
-                  <div class="carousel-caption d-none d-md-block" style="text-align: center;">
-        
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/img/Certificate/6.jpg" alt="Third Certificate" width="800" height="550">
-                  <div class="carousel-caption d-none d-md-block" style="text-align: center;">
-        
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        
-        
-        </section><!-- End Contact Section -->
-        
-        <!-- ======= Carousel Code Ends Here ======= -->
 
-
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section><!-- End Certificate Section -->
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
-
         <div class="section-title">
           <h2>Testimonials</h2>
-          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5500">
+          <!-- dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="5"></button>
+          </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   This recommendation letter by a Professor at IIT Bombay highlights Aniket Fasate's exceptional skills
                   in Embedded Systems, IoT, and AI. Evolving from an intern to a researcher, Aniket is commended for his
-                  practical expertise, innovative contributions, especially in OTA firmware development, and his strong
-                  theoretical knowledge. His ability to handle complex tasks and quick learning capacity are emphasized,
-                  reflecting his readiness for advanced challenges and continuous learning.
+                  practical expertise, especially in OTA firmware development, and strong theoretical knowledge.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Prof.Asim Tewari</h3>
-                <h4>Professor, Center for Machine Intelligence &Data Science (C-MInDS) and Department of Mechanical
-                  Engineering, IIT Bombay, Powai,</h4>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="Prof. Asim Tewari">
+                <h3>Prof. Asim Tewari</h3>
+                <h4>Professor, C-MInDS & Mechanical Engg., IIT Bombay</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As Aniket's professor for three years, teaching Digital Electronics and Digital Image Processing, I've
-                  observed his dedication to academics and practical projects. His active participation in academic
-                  clubs, leadership roles, and commitment to research discussions highlight his potential. Aniket's
-                  enthusiasm and achievements promise a significant contribution to any academic community.
+                  As Aniket's professor for three years... leadership roles and commitment to research discussions highlight his potential.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Prof. M.N Tibdewal</h3>
-                <h4>Professor and Head of Department Electronics and Telecommunication Engineering, Shri Sant Gajanan
-                  Maharaj College of Engineering, Shegaon</h4>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Prof. M.N. Tibdewal">
+                <h3>Prof. M.N. Tibdewal</h3>
+                <h4>HoD, E&TC, SSGMCE Shegaon</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  In three years, I've observed Aniket's eagerness to learn, marked by humor and amiability. His
-                  aptitude in Python, C++, and IoT, coupled with his ability to apply knowledge practically, sets him
-                  apart. Aniket excels in teamwork, presentations, and has demonstrated his skills in notable projects
-                  like Smart India Hackathon and Driverless Cars seminar.
+                  In three years, I've observed Aniket's eagerness to learn… sets him apart.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>prof. K.B Khanchandani</h3>
-                <h4>Professor, Department of Electronics and Telecommunication Engineering, Shri Sant Gajanan Maharaj
-                  College of Engineering, Shegaon</h4>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="Prof. K.B. Khanchandani">
+                <h3>Prof. K.B. Khanchandani</h3>
+                <h4>Professor, E&TC, SSGMCE Shegaon</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Aniket is a dynamic, technically proficient individual, skilled in Python, Embedded C, and C++. His
-                  expertise extends to IoT devices like Espressif boards and Raspberry Pi, excelling in OTA updates and
-                  networking protocols. Aniket's creativity enhances user experience, evident in his comprehensive
-                  documentation and project presentations. Renowned for his dedication and team leadership, he
-                  consistently drives projects towards success, combining ambition with a strong desire for continuous
-                  learning and improvement.
+                  Aniket is a dynamic, technically proficient individual… excelling in OTA updates and networking protocols.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt="Mrs. Vani Sreedhara">
                 <h3>Mrs. Vani Sreedhara</h3>
-                <h4>Sr. Manager and Program Executive Officer, Machine Intelligence program, 11T Bombay</h4>
+                <h4>Sr. Manager, Machine Intelligence Program, IIT Bombay</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  "Aniket's role in managing and executing complex projects is outstanding. His proficiency in Embedded
-                  Systems, Python, and AI, combined with a proactive approach, ensures efficient project completion. His
-                  leadership and motivational skills not only drive projects forward but also inspire his team members
-                  to excel."
+                  “Aniket's role in managing and executing complex projects is outstanding…”
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Ankita Pachkhede">
                 <h3>Ankita Pachkhede</h3>
-                <h4>Assistant System Engineer, Tata Consultancy Services</h4>
+                <h4>Assistant System Engineer, TCS</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
+            <!-- Slide 6 -->
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Aniket stands out as a technically proficient individual with deep knowledge in Embedded Systems, IoT,
-                  Python, Machine Learning, and AI. His practical experience, certifications, and dedication to helping
-                  peers with projects highlight his leadership and problem-solving skills. His motivational approach
-                  inspires teamwork and achievement in technology.
+                  Aniket stands out as a technically proficient individual with deep knowledge in Embedded Systems, IoT, Python, ML and AI.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Dinesh Fukate">
                 <h3>Dinesh Fukate</h3>
-                <h4>SDV Engineer, Bosch Global Software Technologies India</h4>
+                <h4>SDV Engineer, Bosch Global Software</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+          </div><!-- /.carousel-inner -->
 
+          <!-- arrows -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div><!-- /#testimonialsCarousel -->
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
 
 
 
 
-
+   
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
-
         <div class="section-title">
           <h2>Contact</h2>
           <p></p>
         </div>
 
         <div class="row" data-aos="fade-in">
-
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>2 presby Place, Boston MA 02119</p>
+                <p>Boston MA </p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>fasate.a@northeastern.edu</p>
+                <p>fasateaniket5@gmail.com</p>
               </div>
 
               <div class="phone">
@@ -890,12 +826,8 @@
                 <p>+1 8573 3284 78</p>
               </div>
 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.8664026106194!2d-71.0789145240125!3d42.324048171196246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a3657a9b44d%3A0xe65046c365cc6566!2s2%20Presby%20Pl%2C%20Boston%2C%20MA%2002119!5e0!3m2!1sen!2sus!4v1702514722846!5m2!1sen!2sus"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.8664026106194!2d-71.0789145240125!3d42.324048171196246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a3657a9b44d%3A0xe65046c365cc6566!2s2%20Presby%20Pl%2C%20Boston%2C%20MA%2002119!5e0!3m2!1sen!2sus!4v1702514722846!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
             </div>
-
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
@@ -906,16 +838,16 @@
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <label for="email">Your Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <label for="subject">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Message</label>
+                <label for="message">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
@@ -926,12 +858,10 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
-
         </div>
 
       </div>
     </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -941,17 +871,12 @@
         &copy; Copyright <strong><span>iPortfolio</span></strong>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
-      <!-- </div> -->
-  </footer><!-- End  Footer -->
+    </div>
+  </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -967,6 +892,29 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- Show more / less for Professional Experience -->
+  <script>
+    (function () {
+      const resumeSection = document.querySelector('#resume');
+      const container = document.getElementById('pro-exp');
+      if (!resumeSection || !container) return;
 
+      const moreBtn = container.querySelector('#more-btn');
+      const collapsedList = container.querySelector('.collapsed-list');
+
+      if (moreBtn && collapsedList) {
+        moreBtn.addEventListener('click', () => {
+          const isOpen = resumeSection.classList.toggle('is-open');
+          collapsedList.setAttribute('aria-hidden', String(!isOpen));
+          moreBtn.setAttribute('aria-expanded', String(isOpen));
+          moreBtn.textContent = isOpen ? 'Show less' : 'Show more';
+          if (isOpen) {
+            const firstHidden = collapsedList.querySelector('details.resume-item');
+            if (firstHidden) firstHidden.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+    })();
+  </script>
+</body>
 </html>
